@@ -33,7 +33,7 @@ This produces two files:
 ssh-copy-id lo@192.168.56.101
 ```
  
-This drops the public key into `~/.ssh/authorized_keys` on the managed node. When Ansible initiates an SSH session, the managed node checks that file and authenticates against the control node's private key — no password required.
+This drops the public key into `~/.ssh/authorized_keys` on the managed node. When Ansible initiates an SSH session, the managed node checks that file and authenticates against the control node's private key so no password required.
  
 ### 3. Enable SSH on Managed Node #required if control node cannot reach or connect to managed node
  
@@ -112,7 +112,7 @@ ansible-playbook -i inventory.ini myplaybook.yml
  
 - The `apt` module, `copy`, and `ansible.builtin.setup` module are **idempotent** — running the playbook multiple times produces the same result without making unnecessary changes. Ansible checks current state before acting.
 - The `free-h` command is **not truly idempotent** - it collects and reports current system memory usage and runs unconditionally to report changing data.
-- SSH key-based auth is essential for Ansible automation — password prompts break non-interactive execution.
+- SSH key-based auth is essential for Ansible automation password prompts break non-interactive execution.
 - If the managed node is unreachable, SSH service status and firewall rules should be the first troubleshooting steps.
  
 ---

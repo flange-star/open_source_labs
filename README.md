@@ -7,7 +7,7 @@ A collection of labs using open-source software and tools. Each lab documented i
 
 | Lab | Tools Used | OS Used | Topics Covered |
 |-----|------------|---------|----------------|
-| [Ansible Automation Lab](./ansible_labs/) | Ansible, VirtualBox | Ubuntu, Linux Mint | Node setup, SSH-key generation, ad-hoc commands playbook writing, idempotency |
+| [Ansible Automation Lab](./ansible_labs/) | Ansible, VirtualBox | Ubuntu, Linux Mint | Node setup, SSH-key generation, ad-hoc commands playbook writing, idempotency, YAML |
 
 ---
 _More Labs Coming Soon!_

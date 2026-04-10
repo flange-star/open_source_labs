@@ -10,8 +10,7 @@ A hands-on Ansible lab built in VirtualBox using two Linux VMs. The goal was to 
 |---|---|---|
 | Control Node | Ubuntu Desktop | 192.168.56.102 |
 | Managed Node | Linux Mint | 192.168.56.101 |
- 
-**Networking:** VirtualBox Host-Only Adapter  
+  
 **Authentication:** SSH key-based (no password prompts during automation)
  
 ---
@@ -36,7 +35,7 @@ ssh-copy-id lo@192.168.56.101
  
 This drops the public key into `~/.ssh/authorized_keys` on the managed node. When Ansible initiates an SSH session, the managed node checks that file and authenticates against the control node's private key — no password required.
  
-### 3. Enable SSH on Managed Node (if needed)
+### 3. Enable SSH on Managed Node #required if control node cannot reach or connect to managed node
  
 ```bash
 sudo apt install openssh-server -y
@@ -64,7 +63,7 @@ mintnode ansible_host=192.168.56.101 ansible_user=lo
  
 ## Ad-Hoc Commands
  
-Ad-hoc commands let you run one line tasks against managed nodes without writing a playbook. Useful for quick checks and verification.
+Ad-hoc commands let you run one line tasks against managed node which is useful for quick checks and verification without a playbook
  
 ```bash
 # Check uptime on managed node
@@ -119,8 +118,7 @@ ansible-playbook -i inventory.ini myplaybook.yml
 ---
  
 ## Skills Demonstrated
- 
-- VirtualBox Host-Only network configuration
+
 - SSH key generation and passwordless authentication
 - Ansible inventory file structure
 - Ad-hoc command execution

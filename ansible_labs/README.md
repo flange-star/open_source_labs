@@ -124,3 +124,4 @@ ansible-playbook -i inventory.ini myplaybook.yml
 - Ad-hoc command execution
 - Multi-tasking playbook
 - Idempotency analysis
+- YAML syntax

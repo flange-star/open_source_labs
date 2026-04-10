@@ -1,6 +1,6 @@
 # Ansible Lab – VirtualBox Home Lab
  
-A hands-on Ansible lab built in VirtualBox using two Linux VMs. The goal was to establish a working control node / managed node relationship, practice SSH key-based authentication, run ad-hoc commands, and execute a multi-task playbook against a remote host.
+A hands-on Ansible lab built in VirtualBox using two Linux VMs. The goal was to establish a working control node / managed node relationship with SSH key-based authentication, ad-hoc commands, and a multi-task playbook.
  
 ---
  
@@ -93,7 +93,7 @@ ansible -i inventory.ini managed -m command -a "who"
  
     - name: Create a test file
       copy:
-        content: "Ansible automation works!\n"
+        content: "THE ONE PIECE IS REAL!\n"
         dest: /home/lo/ansible_test.txt
  
     - name: Filter and check system memory

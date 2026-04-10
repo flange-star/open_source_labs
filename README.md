@@ -49,7 +49,8 @@ sudo ufw status
 ### 4. Create Project Directory and Inventory File
  
 ```bash
-mkdir ~/ansible-lab && cd ~/ansible-lab
+mkdir ~/ansible-lab
+cd ~/ansible-lab
 nano inventory.ini
 ```
  
@@ -63,14 +64,11 @@ mintnode ansible_host=192.168.56.101 ansible_user=lo
  
 ## Ad-Hoc Commands
  
-Ad-hoc commands let you run one-off tasks against managed nodes without writing a playbook. Useful for quick checks and verification.
+Ad-hoc commands let you run one line tasks against managed nodes without writing a playbook. Useful for quick checks and verification.
  
 ```bash
 # Check uptime on managed node
 ansible -i inventory.ini managed -m command -a "uptime"
- 
-# Check disk space
-ansible -i inventory.ini managed -m command -a "df -h"
  
 # Check who is logged in
 ansible -i inventory.ini managed -m command -a "who"
@@ -80,11 +78,11 @@ ansible -i inventory.ini managed -m command -a "who"
  
 ## Playbook
  
-**Filename:** `playbook.yml`
+**Filename:** `myplaybook.yml`
  
 ```yaml
 ---
-- name: Quick Ansible Lab Playbook
+- name: Ansible Lab Playbook
   hosts: managed
   become: yes
   tasks:
@@ -106,7 +104,7 @@ ansible -i inventory.ini managed -m command -a "who"
  
 **Run the playbook:**
 ```bash
-ansible-playbook -i inventory.ini playbook.yml
+ansible-playbook -i inventory.ini myplaybook.yml
 ```
  
 ---
@@ -126,5 +124,5 @@ ansible-playbook -i inventory.ini playbook.yml
 - SSH key generation and passwordless authentication
 - Ansible inventory file structure
 - Ad-hoc command execution
-- Multi-task playbook authoring
+- Multi-tasking playbook
 - Idempotency analysis

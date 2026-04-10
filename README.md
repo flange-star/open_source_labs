@@ -1,9 +1,10 @@
-#Open-Source Labs
+##Open-Source Labs
 A collection of labs using open-source software and tools. Each lab documented is a real environment that I configured, tested, and analyzed.
 
 --- 
 
-#Labs
+##Labs
+
 | Lab | Tools Used | OS Used | Topics Covered |
 | Ansible Automation Lab| Ansible, VirtualBox | Ubuntu, Linux Mint | Node setup, SSH-key generation, ad-hoc commands playbook writing, idempotency |
 

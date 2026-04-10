@@ -35,7 +35,7 @@ ssh-copy-id lo@192.168.56.101
  
 This drops the public key into `~/.ssh/authorized_keys` on the managed node. When Ansible initiates an SSH session, the managed node checks that file and authenticates against the control node's private key so no password required.
  
-### 3. Enable SSH on Managed Node #required if control node cannot reach or connect to managed node
+### 3. Enable SSH on Managed Node ##required if control node cannot reach or connect to managed node
  
 ```bash
 sudo apt install openssh-server -y

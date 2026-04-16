@@ -11,7 +11,7 @@
 
     - name: Create a test file
       copy:
-        content: "Ansible automation works!\n"
+        content: "THE ONE PIECE IS REAL!\n"
         dest: /home/your_mint_username/ansible_test.txt
 
     - name: Filter and Check system memory

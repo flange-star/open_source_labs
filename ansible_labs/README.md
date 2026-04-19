@@ -84,21 +84,34 @@ ansible -i inventory.ini managed -m command -a "who"
 - name: Ansible Lab Playbook
   hosts: managed
   become: yes
+  vars_files:
+    -vault.yml
+
   tasks:
     - name: Install curl
       apt:
         name: curl
         state: present
- 
+
     - name: Create a test file
       copy:
         content: "THE ONE PIECE IS REAL!\n"
         dest: /home/lo/ansible_test.txt
- 
-    - name: Filter and check system memory
-      ansible.builtin.setup:
+    
+    - name: Install tree 
+      apt:
+        name: tree
+        state: present
+      notify: Confirm tree installed
+
+    - name: Filter and Check system memory
+      setup:
         filter:
           - 'ansible_*_mb'
+  handlers:
+    - name: Confirm tree installed
+      debug: 
+        msg: "tree was installed & handler fired on state change!"
 ```
  
 **Run the playbook:**

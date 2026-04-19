@@ -157,7 +157,7 @@ Ansible reads this file automatically when executed from the project directory â
 Same result â€” fully automated, no passwords typed manually, credentials encrypted at rest.
  
 ### Security Note
-I felt that adding NOPASSWD: ALL to the /etc/sudoers file via visudo was a shortcut that would allow the managed node to run as sudo with no password required at all, but I did not feel this was an appropriate approach to mimic a real production environment as it can lead to privilege escalation exploitation.
+Adding NOPASSWD: ALL to the /etc/sudoers file via visudo was a shortcut that would allow the managed node to run as sudo with no password required at all, but I did not feel this was an appropriate approach to mimic a real production environment as it can lead to privilege escalation exploitation.
  
 ---
  

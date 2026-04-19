@@ -118,7 +118,23 @@ ansible -i inventory.ini managed -m command -a "who"
 ```bash
 ansible-playbook -i inventory.ini myplaybook.yml
 ```
+## Handlers
  
+Handlers are tasks that only execute when explicitly notified by another task. Unlike regular tasks which run every time the playbook executes, a handler only fires if the task that notified it resulted in an actual state change on the managed node.
+ 
+### How It Works
+ 
+The `Install tree` task uses `notify: Confirm tree installed` to register interest in the handler. If Ansible installs tree because it was not already present, a state change occurs and the handler is flagged. Once all tasks finish, Ansible runs any flagged handlers at the end of the play.
+ 
+If tree is already installed, Ansible skips the install, no state change occurs, and the handler never fires. This is idempotency in action — the playbook behaves differently based on actual system state rather than running blindly every time.
+ 
+### First Run vs. Second Run
+ 
+| Run | tree status | Handler |
+|---|---|---|
+| First | Not installed → installs | Fires |
+| Second | Already installed → skipped | Silent |
+
 ---
 
 ## Credential Management – Ansible Vault Integration

@@ -178,7 +178,6 @@ chmod 600 ~/.vault_pass
 [defaults]
 inventory = inventory.ini
 vault_password_file = ~/.vault_pass
-remote_user = lo
 ```
  
 Ansible reads this file automatically when executed from the project directory — no manual flags needed.

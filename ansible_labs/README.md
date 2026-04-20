@@ -111,6 +111,10 @@ ansible -i inventory.ini managed -m command -a "who"
       setup:
         filter:
           - 'ansible_*_mb'
+    - name: Output system memory
+      debug:
+       var: ansible_memtotal_mb
+
   handlers:
     - name: Confirm tree installed
       debug: 

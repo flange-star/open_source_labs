@@ -170,7 +170,7 @@ chmod 600 ~/.vault_pass
  
 - you create a password for Ansbile Vault and pass it to the vault_pass file
 - Stores the vault password so Ansible can unlock the vault automatically
-- `chmod 600` restricts access to your user only at the OS level
+- `chmod 600` restricts read/write access to your user only at the OS level
   
 ### 3. Configure ansible.cfg
  
